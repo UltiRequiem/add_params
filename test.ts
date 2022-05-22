@@ -27,6 +27,14 @@ Deno.test("Add Parameters", () => {
 
   assertEquals(typeof isTSString, "string");
 
+  const isSimplifiedTSString: string = addParams(
+    "https://ultirequiem.com",
+    { hey: 34 },
+    true,
+  );
+
+  assertEquals(typeof isSimplifiedTSString, "string");
+
   const isTSURL: URL = addParams("https://ultirequiem.com", { hey: 34 }, false);
 
   assertInstanceOf(isTSURL, URL);

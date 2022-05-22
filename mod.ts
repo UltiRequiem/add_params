@@ -16,15 +16,18 @@
  */
 export function addParams(
   url: string,
-  // https://github.com/microsoft/TypeScript/issues/32951#issuecomment-527397109
   parameters: { [key: string]: string | number | boolean },
 ): string;
 export function addParams(
   url: string,
-  // https://github.com/microsoft/TypeScript/issues/32951#issuecomment-527397109
   parameters: { [key: string]: string | number | boolean },
   simplify: false,
 ): URL;
+export function addParams(
+  url: string,
+  parameters: { [key: string]: string | number | boolean },
+  simplify: true,
+): string;
 export function addParams(
   url: string,
   // https://github.com/microsoft/TypeScript/issues/32951#issuecomment-527397109

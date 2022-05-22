@@ -1,4 +1,7 @@
-import { assertEquals } from "https://deno.land/std@0.140.0/testing/asserts.ts";
+import {
+  assertEquals,
+  assertInstanceOf,
+} from "https://deno.land/std@0.140.0/testing/asserts.ts";
 
 import { addParams } from "./mod.ts";
 
@@ -17,4 +20,14 @@ Deno.test("Add Parameters", () => {
     "https://ulti.js.org/?greetings=Howdy&page=34",
     addParams("https://ulti.js.org", { greetings: "Howdy", page: 34 }),
   );
+
+  // TypeScript Overloads
+
+  const isTSString: string = addParams("https://ultirequiem.com", { hey: 34 });
+
+  assertEquals(typeof isTSString, "string");
+
+  const isTSURL: URL = addParams("https://ultirequiem.com", { hey: 34 }, false);
+
+  assertInstanceOf(isTSURL, URL);
 });

@@ -7,5 +7,5 @@ buildPackage({
   homepage: "https://ulti.js.org/add_params",
   keywords: ["query", "url"],
   license: "MIT",
-  version: "1.1.0",
+  version: "1.1.1",
 });

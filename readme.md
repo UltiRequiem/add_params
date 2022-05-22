@@ -1,9 +1,9 @@
-# Add Params
+# Add Query Params
 
 [![Code Coverage](https://codecov.io/gh/UltiRequiem/add_params/branch/main/graph/badge.svg)](https://codecov.io/gh/UltiRequiem/add_params)
 [![Deno Doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/deno.land/x/add_params/mod.ts)
 
-Add Query Parameters to and URL.
+Add [Query Parameters](https://wikipedia.org/wiki/Query_string) to an URL.
 
 ## Usage
 
@@ -14,8 +14,8 @@ The API is the same on all this platforms ✔️
 ```javascript
 import { addParams } from "https://deno.land/x/addParams/mod.ts";
 
-addParams("https://ultirequiem.com", { hello: "world", author: "Eliaz" });
-//=> https://ultirequiem.com/?hello=world&author=Eliaz
+addParams("https://ultirequiem.com", { page: 33, author: "Me", share: false });
+//=> https://ultirequiem.com/?page=33&author=Me&share=false
 ```
 
 ### [Node.js 🐢🚀](https://npmjs.com/package/@ultirequiem/add-params)

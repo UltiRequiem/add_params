@@ -5,7 +5,7 @@
  *
  * https://github.com/UltiRequiem/add_params
  *
- * https://ulti.js.org/add_params/
+ * https://ulti.js.org/add_params
  *
  * Copyright (c) Eliaz Bobadilla.
  *
@@ -28,6 +28,9 @@
  * ```javascript
  * addParams("https://ultirequiem.com", { hello: "world", author: "Eliaz" });
  * //=> https://ultirequiem.com/?hello=world&author=Eliaz
+ *
+ *  addParams("https://ulti.js.org", { page: 33, author: "Me", share: false });
+ * //=> https://ulti.js.org/?page=33&author=Me&share=false
  * ```
  */
 export function addParams(

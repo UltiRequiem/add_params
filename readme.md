@@ -12,7 +12,7 @@ The API is the same on all this platforms ✔️
 ### [Deno 🦕](https://deno.land/x/add_params)
 
 ```javascript
-import { addParams } from "https://deno.land/x/addParams/mod.ts";
+import { addParams } from "https://deno.land/x/add_params/mod.ts";
 
 addParams("https://ultirequiem.com", { page: 33, author: "Me", share: false });
 //=> https://ultirequiem.com/?page=33&author=Me&share=false

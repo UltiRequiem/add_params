@@ -1,4 +1,20 @@
 /**
+ * This module is browser compatible.
+ *
+ * Add Query Parameters
+ *
+ * https://github.com/UltiRequiem/add_params
+ *
+ * https://ulti.js.org/add_params/
+ *
+ * Copyright (c) Eliaz Bobadilla.
+ *
+ * Released under the MIT License.
+ *
+ * @module
+ */
+
+/**
  * Add Query Parameters to an URL.
  *
  * Query String: {@link https://wikipedia.org/wiki/Query_string}

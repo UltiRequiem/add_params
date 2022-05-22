@@ -23,19 +23,19 @@ Deno.test("Add Parameters", () => {
 
   // TypeScript Overloads
 
-  const isTSString: string = addParams("https://ultirequiem.com", { hey: 34 });
+  const isString: string = addParams("https://ultirequiem.com", { hey: 34 });
 
-  assertEquals(typeof isTSString, "string");
+  assertEquals(typeof isString, "string");
 
-  const isSimplifiedTSString: string = addParams(
+  const isSimpleString: string = addParams(
     "https://ultirequiem.com",
     { hey: 34 },
     true,
   );
 
-  assertEquals(typeof isSimplifiedTSString, "string");
+  assertEquals(typeof isSimpleString, "string");
 
-  const isTSURL: URL = addParams("https://ultirequiem.com", { hey: 34 }, false);
+  const isURL: URL = addParams("https://ultirequiem.com", { hey: 34 }, false);
 
-  assertInstanceOf(isTSURL, URL);
+  assertInstanceOf(isURL, URL);
 });

@@ -21,6 +21,14 @@ Deno.test("Add Parameters", () => {
     addParams("https://ulti.js.org", { greetings: "Howdy", page: 34 }),
   );
 
+  assertEquals(
+    "https://developer.mozilla.org/en-US/docs?year=2001&month=May",
+    addParams(
+      new URL("/en-US/docs", "https://developer.mozilla.org/fr-FR/toto"),
+      { year: 2001, month: "May" },
+    ),
+  );
+
   // TypeScript Overloads
 
   const isString: string = addParams("https://ultirequiem.com", { hey: 34 });

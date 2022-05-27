@@ -31,33 +31,38 @@
  *
  *  addParams("https://ulti.js.org", { page: 33, author: "Me", share: false });
  * //=> https://ulti.js.org/?page=33&author=Me&share=false
+ *
+ * addParams(new URL("/api", "https://example.com"), { day: 2 });
+ * //=> https://example.com/api?day=2
  * ```
  */
 export function addParams(
-  url: string,
+  url: string | URL,
   parameters: { [key: string]: string | number | boolean },
 ): string;
 export function addParams(
-  url: string,
+  url: string | URL,
   parameters: { [key: string]: string | number | boolean },
   simplify: false,
 ): URL;
 export function addParams(
-  url: string,
+  url: string | URL,
   parameters: { [key: string]: string | number | boolean },
   simplify: true,
 ): string;
 export function addParams(
-  url: string,
+  url: string | URL,
   // https://github.com/microsoft/TypeScript/issues/32951#issuecomment-527397109
   parameters: { [key: string]: string | number | boolean },
   simplify = true,
 ) {
-  const parsedURL = new URL(url);
-
-  for (const key in parameters) {
-    parsedURL.searchParams.append(key, parameters[key] as string);
+  if (typeof url === "string") {
+    url = new URL(url);
   }
 
-  return simplify ? parsedURL.toString() : parsedURL;
+  for (const key in parameters) {
+    url.searchParams.append(key, parameters[key] as string);
+  }
+
+  return simplify ? url.toString() : url;
 }

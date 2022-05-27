@@ -16,6 +16,9 @@ import { addParams } from "https://deno.land/x/add_params/mod.ts";
 
 addParams("https://ultirequiem.com", { page: 33, author: "Me", share: false });
 //=> https://ultirequiem.com/?page=33&author=Me&share=false
+
+addParams(new URL("/api", "https://example.com"), { day: 2 });
+//=> https://example.com/api?day=2
 ```
 
 ### [Node.js 🐢🚀](https://npmjs.com/package/@ultirequiem/add-params)

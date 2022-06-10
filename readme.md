@@ -24,7 +24,7 @@ addParams(new URL("/api", "https://example.com"), { day: 2 });
 ### [Node.js 🐢🚀](https://npmjs.com/package/@ultirequiem/add-params)
 
 ```javascript
-import { driveLink } from "@ultirequiem/add-params";
+import { addParams } from "@ultirequiem/add-params";
 ```
 
 ### [Browser 🌐](https://developer.mozilla.org/en-US/docs/Glossary/Browser)

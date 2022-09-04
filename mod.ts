@@ -56,10 +56,10 @@ export function addParams(
   parameters: Record<string, string | number | boolean>,
   simplify = true,
 ) {
-  const newURL = new URL(typeof url === "string" ? url : url.toString());
+  const newURL = new URL(url);
 
   for (const key in parameters) {
-    newURL.searchParams.append(key, parameters[key] as string);
+    newURL.searchParams.append(key, parameters[key].toString());
   }
 
   return simplify ? newURL.toString() : newURL;

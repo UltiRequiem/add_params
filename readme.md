@@ -34,8 +34,8 @@ You can use any [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) �
 Eg 👉
 [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) ↔️
 [SkyPack](https://cdn.skypack.dev/@ultirequiem/add-params) 🆚
-[Script Tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
-↔️ [JSDelivr](https://cdn.jsdelivr.net/npm/@ultirequiem/add-params)
+[Script Tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script) ↔️
+[JSDelivr](https://cdn.jsdelivr.net/npm/@ultirequiem/add-params)
 
 ## Documentation
 

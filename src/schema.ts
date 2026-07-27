@@ -19,8 +19,10 @@ export interface Schema<T> extends Parseable<T> {
   default(fallback: T): Schema<T>;
 }
 
+/** A map of query keys to {@link Parseable} schemas, as accepted by `parse()`'s `schema` option and {@link validateParams}. */
 export type SchemaMap = Record<string, Parseable<unknown>>;
 
+/** Infers the typed result object produced by parsing against a {@link SchemaMap}. */
 export type InferSchema<S extends SchemaMap> = {
   [K in keyof S]: S[K] extends Parseable<infer T> ? T : never;
 };

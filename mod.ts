@@ -25,8 +25,10 @@ export { build } from "./src/template.ts";
 export { t, validateParams } from "./src/schema.ts";
 export type {
   InferSchema,
+  NumberSchema,
   Parseable,
   Schema,
+  SchemaBuilder,
   SchemaMap,
 } from "./src/schema.ts";
 export type {

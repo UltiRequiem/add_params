@@ -47,7 +47,8 @@ function toScalarString(value: unknown): string {
   throw new TypeError(`Expected a scalar query value, got ${typeof value}`);
 }
 
-interface NumberSchema extends Schema<number> {
+/** A `Schema<number>` with `.min()`/`.max()` range checks, as returned by `t.number()`. */
+export interface NumberSchema extends Schema<number> {
   min(minimum: number): NumberSchema;
   max(maximum: number): NumberSchema;
 }
@@ -83,8 +84,16 @@ function numberSchema(
   });
 }
 
+/** The shape of {@link t}, the tiny built-in schema builder. */
+export interface SchemaBuilder {
+  string(): Schema<string>;
+  number(): NumberSchema;
+  boolean(): Schema<boolean>;
+  array<E>(element: Parseable<E>): Schema<E[]>;
+}
+
 /** Tiny built-in schema builder for {@link parse}'s `schema` option and {@link validateParams}. */
-export const t = {
+export const t: SchemaBuilder = {
   string(): Schema<string> {
     return makeSchema((value) => toScalarString(value));
   },

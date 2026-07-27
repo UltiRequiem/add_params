@@ -21,7 +21,13 @@ jobs:
 
       - name: Setup Node
         if: matrix.os == 'ubuntu-latest'
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Setup Bun
+        if: matrix.os == 'ubuntu-latest'
+        uses: oven-sh/setup-bun@v2
 
       - name: Check Code Format
         if: matrix.os == 'ubuntu-latest'
@@ -35,8 +41,16 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         run: deno check mod.ts
 
-      - name: Tests
+      - name: Test (Deno)
         run: deno test --coverage=./cov
+
+      - name: Test (Node)
+        if: matrix.os == 'ubuntu-latest'
+        run: node --experimental-strip-types --test test.ts
+
+      - name: Test (Bun)
+        if: matrix.os == 'ubuntu-latest'
+        run: bun test ./test.ts
 
       - name: Generate Coverage
         if: matrix.os == 'ubuntu-latest'
@@ -48,6 +62,6 @@ jobs:
         with:
           files: cov.lcov
 
-      - name: Node Test
+      - name: Build npm Package
         if: matrix.os == 'ubuntu-latest'
         run: deno run -A scripts/node.ts

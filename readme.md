@@ -1,4 +1,4 @@
-# Add Query Params
+# ultraqs
 
 [![Code Coverage](https://codecov.io/gh/UltiRequiem/add_params/branch/main/graph/badge.svg)](https://codecov.io/gh/UltiRequiem/add_params)
 [![Deno Doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/deno.land/x/add_params/mod.ts)
@@ -21,10 +21,10 @@ addParams(new URL("/api", "https://example.com"), { day: 2 });
 //=> https://example.com/api?day=2
 ```
 
-### [Node.js 🐢🚀](https://npmjs.com/package/@ultirequiem/add-params)
+### [Node.js 🐢🚀](https://npmjs.com/package/ultraqs)
 
 ```javascript
-import { addParams } from "@ultirequiem/add-params";
+import { addParams } from "ultraqs";
 ```
 
 ### [Browser 🌐](https://developer.mozilla.org/en-US/docs/Glossary/Browser)
@@ -33,9 +33,9 @@ You can use any [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) �
 
 Eg 👉
 [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) ↔️
-[SkyPack](https://cdn.skypack.dev/@ultirequiem/add-params) 🆚
+[SkyPack](https://cdn.skypack.dev/ultraqs) 🆚
 [Script Tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script) ↔️
-[JSDelivr](https://cdn.jsdelivr.net/npm/@ultirequiem/add-params)
+[JSDelivr](https://cdn.jsdelivr.net/npm/ultraqs)
 
 ## Documentation
 

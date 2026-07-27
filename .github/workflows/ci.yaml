@@ -12,16 +12,16 @@ jobs:
       fail-fast: true
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
 
       - name: Setup Deno
-        uses: denoland/setup-deno@v1
+        uses: denoland/setup-deno@v2
         with:
-          deno-version: v1.x
+          deno-version: v2.x
 
       - name: Setup Node
         if: matrix.os == 'ubuntu-latest'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: "22"
 
@@ -46,11 +46,11 @@ jobs:
 
       - name: Test (Node)
         if: matrix.os == 'ubuntu-latest'
-        run: node --experimental-strip-types --test test.ts
+        run: node --experimental-strip-types --test
 
       - name: Test (Bun)
         if: matrix.os == 'ubuntu-latest'
-        run: bun test ./test.ts
+        run: bun test
 
       - name: Generate Coverage
         if: matrix.os == 'ubuntu-latest'
@@ -61,7 +61,3 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           files: cov.lcov
-
-      - name: Build npm Package
-        if: matrix.os == 'ubuntu-latest'
-        run: deno run -A scripts/node.ts
